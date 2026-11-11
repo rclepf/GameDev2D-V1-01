@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V1 · O castelo em formas — Trilha GameDev 2D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="trilha.css">
+</head>
+<body>
+
+<header class="hud"><div class="dentro">
+  <span class="marca"><img src="img/vida.png" alt="">GameDev 2D · V1</span>
+  <nav>
+    <a href="#sala1">Vetor em jogos</a><a href="#sala2">Illustrator</a><a href="#sala3">Formas</a><a href="#sala4">Paleta</a>
+    <a href="#sala5">Silhueta</a><a href="#sala6">Partes</a><a href="#sala7">Redesenho</a><a href="#sala8">Exportar</a><a href="#sala9">Mapa</a>
+  </nav>
+</div></header>
+
+<section class="abertura">
+  <div class="selo">ARTE VETORIAL PARA JOGOS · SITE 1 DE 3 · AULA INICIAL (SÁBADO, PRESENCIAL)</div>
+  <h1>O castelo <em>em formas</em>.</h1>
+  <p class="lead">Na pista vetorial você não desenha pixel a pixel: você monta. Círculos, retângulos e algumas curvas viram baú, herói e cenário — e o herói já nasce separado em partes, pronto para ganhar ossos na V2. Hoje você aprende o método, redesenha um objeto do castelo no Illustrator e, na última hora, começa o <b>seu</b> jogo: as cores e as silhuetas do seu elenco.</p>
+  <div class="palco" aria-hidden="true"><div class="sprite porco"></div><div class="sprite rei"></div></div>
+  <div class="inventario">
+    <div class="slot"><img src="img/porta.png" alt=""><div class="rot">Etapa anterior</div><div class="val">C1 · GDD do seu jogo aprovado</div></div>
+    <div class="slot"><img src="img/bau.png" alt=""><div class="rot">Arquivo de partida</div><div class="val"><a href="kit_estudo_V1.zip">kit_estudo_V1.zip</a> (objetos do castelo e paleta)</div></div>
+    <div class="slot entrega"><img src="img/chave.png" alt=""><div class="rot">Você vai produzir</div><div class="val">Redesenho de um objeto + cores e silhuetas do seu elenco (V1.1)</div></div>
+    <div class="slot"><img src="img/porta.png" alt=""><div class="rot">Próxima etapa</div><div class="val"><a href="https://rclepf.github.io/GameDev2D-V1-02/">Site 2 · Estudo da semana (EAD)</a></div></div>
+  </div>
+</section>
+
+<main>
+
+<section class="sala" id="sala1">
+  <div class="sala-cab"><span class="sala-num">SALA 01</span><h2>Vetor em jogos: o que muda</h2></div>
+  <p class="objetivo">Objetivo: entender o que o vetor ganha e o que ele cobra em relação à pixel art.</p>
+  <p>Uma imagem vetorial não guarda pixels: guarda <b>pontos, curvas e preenchimentos</b>. Por isso ela pode ser exportada em qualquer tamanho sem serrilhar. O baú do castelo foi desenhado em pixel; abaixo, o mesmo baú reconstruído em vetor.</p>
+  <div class="par">
+    <figure><img src="img/bau_pixel_ampliado.png" alt="Baú do castelo em pixel art ampliado 12 vezes"><figcaption>Pixel: 29 × 22 px ampliado 12×. Cada pixel vira um bloco.</figcaption></figure>
+    <figure><div class="desenho"><svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Baú redesenhado em vetor"><g transform="translate(0,0) scale(1)"><rect x="20" y="30" width="160" height="52" rx="22" fill="#8e491f" stroke="none"/><rect x="20" y="78" width="160" height="72" rx="4" fill="#8e491f" stroke="none"/><rect x="14" y="72" width="172" height="14" rx="4" fill="#cc8400" stroke="none"/><rect x="88" y="26" width="24" height="126" rx="3" fill="#cc8400" stroke="none"/><rect x="14" y="84" width="16" height="68" rx="3" fill="#cc8400" stroke="none"/><rect x="170" y="84" width="16" height="68" rx="3" fill="#cc8400" stroke="none"/><rect x="86" y="82" width="28" height="30" rx="5" fill="#cc8400" stroke="none"/><rect x="34" y="120" width="132" height="30" fill="#5c2201"/><rect x="34" y="40" width="50" height="6" rx="3" fill="#b5622e"/><rect x="116" y="40" width="50" height="6" rx="3" fill="#b5622e"/><rect x="34" y="104" width="50" height="4" fill="#5c2201" opacity=".6"/><rect x="116" y="104" width="50" height="4" fill="#5c2201" opacity=".6"/><rect x="88" y="26" width="7" height="126" fill="#f8b547"/><rect x="14" y="72" width="172" height="4" fill="#f8b547"/><rect x="14" y="84" width="5" height="68" fill="#f8b547"/><rect x="170" y="84" width="5" height="68" fill="#f8b547"/><rect x="107" y="26" width="5" height="126" fill="#8e5a00"/><rect x="86" y="82" width="28" height="30" rx="5" fill="#cc8400" stroke="#280a00" stroke-width="3"/><rect x="97" y="90" width="6" height="14" rx="3" fill="#280a00"/><path d="M14 86 V76 Q14 72 20 72 V52 Q20 30 42 30 H158 Q180 30 180 52 V72 Q186 72 186 76 V150 Q186 152 182 152 H18 Q14 152 14 148 Z" fill="none" stroke="#280a00" stroke-width="5"/></g></svg></div><figcaption>Vetor: as mesmas ideias (tampa, aro, faixa, fecho) em formas. Liso em qualquer tamanho.</figcaption></figure>
+  </div>
+  <table>
+    <tr><th></th><th>Pixel art</th><th>Vetor</th></tr>
+    <tr><td>Unidade de trabalho</td><td>O pixel, na grade</td><td>A forma (ponto, curva, preenchimento)</td></tr>
+    <tr><td>Mudar o tamanho</td><td>Só em escala inteira; redesenhar para outra resolução</td><td>Livre, sem perda</td></tr>
+    <tr><td>Animação típica</td><td>Quadro a quadro (P2)</td><td>Partes com ossos, recorte (V2)</td></tr>
+    <tr><td>Risco</td><td>Pixels soltos, jaggies</td><td>Detalhe demais, traço que muda de espessura, “cara de clip-art”</td></tr>
+  </table>
+  <div class="caixa dica"><span class="tag">Mesmo jogo, mesma grade</span>Os personagens vetoriais da trilha entram no mesmo projeto Godot do castelo: tela de 480 × 270, tiles de 32 px. O herói deve ter de 1 a 1,5 tile de altura no jogo.</div>
+</section>
+
+<section class="sala" id="sala2">
+  <div class="sala-cab"><span class="sala-num">SALA 02</span><h2>Illustrator essencial para jogo</h2></div>
+  <p class="objetivo">Objetivo: preparar um documento que já sai na escala do jogo.</p>
+  <div class="passo">
+    <div class="passo-tit"><span class="moeda">1</span>Documento em 4×</div>
+    <ol>
+      <li><b>Arquivo → Novo</b>, aba <b>Web</b>, unidade <b>pixels</b>, modo de cor <b>RGB</b>.</li>
+      <li>Trabalhamos em <b>4× o tamanho do jogo</b>: 1 tile do jogo (32 px) = <b>128 px</b> na prancheta. Prancheta do herói: <b>256 × 256</b> (= 64 × 64 no jogo).</li>
+      <li><b>Editar → Preferências → Guias e grade</b>: linha de grade a cada 128 px, 4 subdivisões. <b>Visualizar → Mostrar grade</b>.</li>
+    </ol>
+    <div class="porque"><b>Por quê:</b> o jogo amplia a tela de 480 × 270 até o monitor. Um desenho exportado em 4× tem resolução de sobra para ficar nítido em tela cheia; no Godot ele entra com escala 0,25.</div>
+  </div>
+  <div class="passo">
+    <div class="passo-tit"><span class="moeda">2</span>As ferramentas da semana</div>
+    <table>
+      <tr><th>Ferramenta</th><th>Atalho</th><th>Para quê</th></tr>
+      <tr><td>Seleção / Seleção direta</td><td><kbd>V</kbd> / <kbd>A</kbd></td><td>Mover formas inteiras / mover pontos e alças.</td></tr>
+      <tr><td>Retângulo / Elipse</td><td><kbd>M</kbd> / <kbd>L</kbd></td><td>As formas-base de quase tudo. Use os <b>cantos dinâmicos</b> (bolinhas internas) para arredondar.</td></tr>
+      <tr><td>Construtor de formas</td><td><kbd>Shift</kbd>+<kbd>M</kbd></td><td>Arrastar sobre regiões sobrepostas une; com <kbd>Alt</kbd>, apaga.</td></tr>
+      <tr><td>Pathfinder</td><td>Janela → Pathfinder</td><td>Unir, subtrair, interseccionar formas selecionadas.</td></tr>
+      <tr><td>Caneta</td><td><kbd>P</kbd></td><td>Curvas que as formas não resolvem (cabelo, capa, folha).</td></tr>
+      <tr><td>Camadas</td><td>Janela → Camadas</td><td>Uma camada por parte do personagem.</td></tr>
+    </table>
+  </div>
+  <div class="passo">
+    <div class="passo-tit"><span class="moeda">3</span>Carregue a paleta do castelo</div>
+    <p>Baixe o <a href="kit_estudo_V1.zip"><b>kit de estudo</b></a>. No painel <b>Amostras</b>, menu → <b>Abrir biblioteca de amostras → Outra biblioteca…</b> → <code>paleta_castelo.ase</code>. Arraste as cores para o painel: elas entram como <b>amostras globais</b>.</p>
+  </div>
+  <div class="caixa dica"><span class="tag">Em casa sem Illustrator?</span>O EAD pode ser feito no <b>Inkscape</b>, gratuito. A tabela com o nome de cada ferramenta nos dois programas está no <a href="https://rclepf.github.io/GameDev2D-V1-02/#freeware">Site 2 · Estudo da semana</a>.</div>
+</section>
+
+<section class="sala" id="sala3">
+  <div class="sala-cab"><span class="sala-num">SALA 03</span><h2>Construção por formas</h2></div>
+  <p class="objetivo">Objetivo: desenhar sem caneta tudo o que as formas resolvem.</p>
+  <p>O método da pista vetorial: <b>decompor</b> o objeto em formas simples, <b>sobrepor</b>, <b>unir ou cortar</b> com o Construtor de formas e só no fim <b>colorir</b>. A caneta entra para o que sobrar.</p>
+  <figure><div class="desenho"><svg viewBox="0 0 860 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Baú construído em quatro etapas: formas soltas, formas sobrepostas, regiões unidas com o Construtor de formas e versão final com cor, luz e sombra"><g transform="translate(0,0)"><rect x="10" y="30" width="160" height="52" rx="22" fill="none" stroke="#3f3851" stroke-width="2" stroke-dasharray="5 4"/><rect x="20" y="86" width="160" height="72" rx="4" fill="none" stroke="#3f3851" stroke-width="2" stroke-dasharray="5 4"/><rect x="24" y="72" width="172" height="14" rx="4" fill="none" stroke="#3f3851" stroke-width="2" stroke-dasharray="5 4"/><rect x="78" y="34" width="24" height="126" rx="3" fill="none" stroke="#3f3851" stroke-width="2" stroke-dasharray="5 4"/><rect x="14" y="84" width="16" height="68" rx="3" fill="none" stroke="#3f3851" stroke-width="2" stroke-dasharray="5 4"/><rect x="180" y="92" width="16" height="68" rx="3" fill="none" stroke="#3f3851" stroke-width="2" stroke-dasharray="5 4"/><rect x="76" y="82" width="28" height="30" rx="5" fill="none" stroke="#3f3851" stroke-width="2" stroke-dasharray="5 4"/><text x="100" y="185" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">1 · formas soltas</text></g><g transform="translate(215,0)"><rect x="20" y="30" width="160" height="52" rx="22" fill="#8e491f" fill-opacity=".35" stroke="#3f3851" stroke-width="2"/><rect x="20" y="78" width="160" height="72" rx="4" fill="#8e491f" fill-opacity=".35" stroke="#3f3851" stroke-width="2"/><rect x="14" y="72" width="172" height="14" rx="4" fill="#cc8400" fill-opacity=".35" stroke="#3f3851" stroke-width="2"/><rect x="88" y="26" width="24" height="126" rx="3" fill="#cc8400" fill-opacity=".35" stroke="#3f3851" stroke-width="2"/><rect x="14" y="84" width="16" height="68" rx="3" fill="#cc8400" fill-opacity=".35" stroke="#3f3851" stroke-width="2"/><rect x="170" y="84" width="16" height="68" rx="3" fill="#cc8400" fill-opacity=".35" stroke="#3f3851" stroke-width="2"/><rect x="86" y="82" width="28" height="30" rx="5" fill="#cc8400" fill-opacity=".35" stroke="#3f3851" stroke-width="2"/><text x="100" y="185" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">2 · sobrepostas</text></g><g transform="translate(430,0)"><rect x="20" y="30" width="160" height="52" rx="22" fill="#8e491f" stroke="none"/><rect x="20" y="78" width="160" height="72" rx="4" fill="#8e491f" stroke="none"/><rect x="14" y="72" width="172" height="14" rx="4" fill="#cc8400" stroke="none"/><rect x="88" y="26" width="24" height="126" rx="3" fill="#cc8400" stroke="none"/><rect x="14" y="84" width="16" height="68" rx="3" fill="#cc8400" stroke="none"/><rect x="170" y="84" width="16" height="68" rx="3" fill="#cc8400" stroke="none"/><rect x="86" y="82" width="28" height="30" rx="5" fill="#cc8400" stroke="none"/><path d="M14 86 V76 Q14 72 20 72 V52 Q20 30 42 30 H158 Q180 30 180 52 V72 Q186 72 186 76 V150 Q186 152 182 152 H18 Q14 152 14 148 Z" fill="none" stroke="#280a00" stroke-width="5"/><text x="100" y="185" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">3 · construtor de formas</text></g><g transform="translate(645,0)"><g transform="translate(0,0) scale(1)"><rect x="20" y="30" width="160" height="52" rx="22" fill="#8e491f" stroke="none"/><rect x="20" y="78" width="160" height="72" rx="4" fill="#8e491f" stroke="none"/><rect x="14" y="72" width="172" height="14" rx="4" fill="#cc8400" stroke="none"/><rect x="88" y="26" width="24" height="126" rx="3" fill="#cc8400" stroke="none"/><rect x="14" y="84" width="16" height="68" rx="3" fill="#cc8400" stroke="none"/><rect x="170" y="84" width="16" height="68" rx="3" fill="#cc8400" stroke="none"/><rect x="86" y="82" width="28" height="30" rx="5" fill="#cc8400" stroke="none"/><rect x="34" y="120" width="132" height="30" fill="#5c2201"/><rect x="34" y="40" width="50" height="6" rx="3" fill="#b5622e"/><rect x="116" y="40" width="50" height="6" rx="3" fill="#b5622e"/><rect x="34" y="104" width="50" height="4" fill="#5c2201" opacity=".6"/><rect x="116" y="104" width="50" height="4" fill="#5c2201" opacity=".6"/><rect x="88" y="26" width="7" height="126" fill="#f8b547"/><rect x="14" y="72" width="172" height="4" fill="#f8b547"/><rect x="14" y="84" width="5" height="68" fill="#f8b547"/><rect x="170" y="84" width="5" height="68" fill="#f8b547"/><rect x="107" y="26" width="5" height="126" fill="#8e5a00"/><rect x="86" y="82" width="28" height="30" rx="5" fill="#cc8400" stroke="#280a00" stroke-width="3"/><rect x="97" y="90" width="6" height="14" rx="3" fill="#280a00"/><path d="M14 86 V76 Q14 72 20 72 V52 Q20 30 42 30 H158 Q180 30 180 52 V72 Q186 72 186 76 V150 Q186 152 182 152 H18 Q14 152 14 148 Z" fill="none" stroke="#280a00" stroke-width="5"/></g><text x="100" y="185" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">4 · cor, luz e sombra</text></g></svg></div><figcaption>O baú do castelo em quatro etapas. Sete retângulos de cantos arredondados — nenhum ponto feito com a caneta.</figcaption></figure>
+  <div class="passo">
+    <div class="passo-tit"><span class="moeda">4</span>Decomponha antes de desenhar</div>
+    <p>Olhe a porta e a caixa do castelo (no kit). Em papel, desenhe cada uma só com retângulos, círculos e triângulos. Quantas formas cada uma precisa?</p>
+    <div class="porque"><b>Por quê:</b> quem decompõe primeiro desenha mais rápido e com traço mais limpo. Forma geométrica tem curva perfeita; curva feita à mão com a caneta, raramente.</div>
+  </div>
+  <div class="caixa atencao"><span class="tag">Contorno consistente</span>Defina <b>uma</b> espessura de contorno para o jogo inteiro — na trilha, sugerimos 8 px na prancheta 4× (2 px no jogo). Herói, inimigo e cenário com espessuras diferentes parecem de jogos diferentes.</div>
+</section>
+
+<section class="sala" id="sala4">
+  <div class="sala-cab"><span class="sala-num">SALA 04</span><h2>Paleta, amostras globais e sombra chapada</h2></div>
+  <p class="objetivo">Objetivo: colorir de um jeito que se possa mudar o jogo inteiro em um clique.</p>
+  <p>Uma <b>amostra global</b> é uma cor com nome que fica ligada a tudo o que a usa. Mudou a amostra, mudou cada forma pintada com ela — em todas as pranchetas.</p>
+  <div class="rampas">
+<div class="rampa"><b>madeira</b><span class="esc" style="background:#5c2201">sombra</span><span class="esc" style="background:#8e491f">base</span><span class="esc" style="background:#b5622e">luz</span></div>
+<div class="rampa"><b>ouro</b><span class="esc" style="background:#8e5a00">sombra</span><span class="esc" style="background:#cc8400">base</span><span style="background:#f8b547">luz</span><span style="background:#ffefa9">brilho</span></div>
+<div class="rampa"><b>contorno</b><span class="esc" style="background:#280a00">contorno</span><span class="esc" style="background:#3f3851">fundo</span></div>
+  </div>
+  <ul class="lista-check">
+    <li><b>Três tons por material</b>: base, sombra e luz. É assim que o baú da Sala 03 foi pintado.</li>
+    <li><b>Sombra chapada</b>: uma forma de cor mais escura por cima, sem degradê. Lê melhor pequeno e anima sem “escorregar”.</li>
+    <li><b>Luz de cima</b>, igual ao castelo. Sombra embaixo e no lado oposto.</li>
+    <li>Contorno em <b>marrom ou roxo escuro</b>, não preto puro: o castelo usa <code>#280a00</code>.</li>
+  </ul>
+  <div class="passo">
+    <div class="passo-tit"><span class="moeda">5</span>Teste a amostra global</div>
+    <p>Pinte três formas com a amostra <i>ouro_2</i>. Clique duas vezes na amostra, mude a cor e veja as três mudarem juntas. Se não mudaram, a opção <b>Global</b> da amostra está desligada.</p>
+  </div>
+</section>
+
+<section class="sala" id="sala5">
+  <div class="sala-cab"><span class="sala-num">SALA 05</span><h2>Silhueta e linguagem de formas</h2></div>
+  <p class="objetivo">Objetivo: escolher as formas do personagem pelo que elas comunicam.</p>
+  <p>Antes do detalhe, o jogador lê a <b>forma geral</b>. Há uma convenção forte no design de personagens:</p>
+  <figure><div class="desenho"><svg viewBox="0 0 540 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Três criaturas: uma redonda, uma quadrada e uma triangular de sobrancelhas franzidas"><circle cx="90" cy="80" r="48" fill="#91ea9c" stroke="#280a00" stroke-width="4"/><circle cx="76" cy="84" r="7" fill="#fff" stroke="#280a00" stroke-width="2"/><circle cx="104" cy="84" r="7" fill="#fff" stroke="#280a00" stroke-width="2"/><circle cx="78" cy="85" r="3" fill="#280a00"/><circle cx="106" cy="85" r="3" fill="#280a00"/><text x="90" y="152" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851" font-weight="700">círculo</text><text x="90" y="168" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">amigável, macio</text><rect x="220" y="32" width="100" height="96" rx="8" fill="#8ca9b5" stroke="#280a00" stroke-width="4"/><circle cx="256" cy="84" r="7" fill="#fff" stroke="#280a00" stroke-width="2"/><circle cx="284" cy="84" r="7" fill="#fff" stroke="#280a00" stroke-width="2"/><circle cx="258" cy="85" r="3" fill="#280a00"/><circle cx="286" cy="85" r="3" fill="#280a00"/><text x="270" y="152" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851" font-weight="700">quadrado</text><text x="270" y="168" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">firme, confiável</text><path d="M450 22 L508 128 H392 Z" fill="#e27f6d" stroke="#280a00" stroke-width="4" stroke-linejoin="round"/><circle cx="436" cy="84" r="7" fill="#fff" stroke="#280a00" stroke-width="2"/><circle cx="464" cy="84" r="7" fill="#fff" stroke="#280a00" stroke-width="2"/><circle cx="438" cy="85" r="3" fill="#280a00"/><circle cx="466" cy="85" r="3" fill="#280a00"/><path d="M426 72 L444 78 M474 72 L456 78" stroke="#280a00" stroke-width="3"/><text x="450" y="152" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851" font-weight="700">triângulo</text><text x="450" y="168" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">perigo, energia</text></svg></div><figcaption>Círculo, quadrado e triângulo com os mesmos olhos. A forma sozinha muda o caráter.</figcaption></figure>
+  <p>O rei do castelo é largo e quadrado (coroa, barba, martelo): firme. Os porcos são redondos: inimigos mais engraçados que assustadores. O teste de silhueta vale também no vetor: pinte tudo de preto e veja se ainda se reconhece.</p>
+  <figure><img src="img/silhuetas.png" alt="O rei e o porco do castelo, coloridos e em silhueta preta"><figcaption>Em preto, o rei e o porco continuam reconhecíveis.</figcaption></figure>
+</section>
+
+<section class="sala" id="sala6">
+  <div class="sala-cab"><span class="sala-num">SALA 06</span><h2>O personagem em partes</h2></div>
+  <p class="objetivo">Objetivo: desenhar o herói já pronto para ser animado com ossos na V2.</p>
+  <p>Na pista vetorial o personagem é animado por <b>recorte</b>: cada parte é uma imagem separada que gira em torno de um <b>pivô</b>, como um boneco de papel com colchetes.</p>
+  <figure><div class="desenho"><svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Robô original montado e, ao lado, separado em seis partes com o ponto de pivô de cada uma marcado em vermelho"><g transform="translate(10,40)"><rect x="72" y="104" width="20" height="58" rx="10" fill="#8a96a3" stroke="#280a00" stroke-width="3"/><rect x="86" y="158" width="22" height="60" rx="11" fill="#234f5a" stroke="#280a00" stroke-width="3"/><rect x="75" y="92" width="70" height="78" rx="20" fill="#3f8fa3" stroke="#280a00" stroke-width="3"/><rect x="96" y="118" width="28" height="18" rx="5" fill="#cc8400" stroke="#280a00" stroke-width="2"/><rect x="112" y="158" width="22" height="60" rx="11" fill="#2d6b7a" stroke="#280a00" stroke-width="3"/><rect x="68" y="30" width="84" height="70" rx="22" fill="#d9dde3" stroke="#280a00" stroke-width="3"/><rect x="88" y="50" width="54" height="24" rx="12" fill="#3f3851"/><circle cx="125" cy="62" r="6" fill="#f8b547"/><line x1="110" y1="30" x2="110" y2="14" stroke="#280a00" stroke-width="3"/><circle cx="110" cy="12" r="6" fill="#e27f6d" stroke="#280a00" stroke-width="3"/><rect x="128" y="104" width="20" height="58" rx="10" fill="#b9c2cc" stroke="#280a00" stroke-width="3"/><text x="110" y="262" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">montado</text></g><g transform="translate(280,36)"><g transform="translate(-46,0)"><rect x="72" y="104" width="20" height="58" rx="10" fill="#8a96a3" stroke="#280a00" stroke-width="3"/><circle cx="82" cy="112" r="12" fill="none" stroke="#d63c3c" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="82" cy="112" r="4" fill="#d63c3c"/></g><g transform="translate(-30,34)"><rect x="86" y="158" width="22" height="60" rx="11" fill="#234f5a" stroke="#280a00" stroke-width="3"/><circle cx="97" cy="166" r="12" fill="none" stroke="#d63c3c" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="97" cy="166" r="4" fill="#d63c3c"/></g><g transform="translate(0,0)"><rect x="75" y="92" width="70" height="78" rx="20" fill="#3f8fa3" stroke="#280a00" stroke-width="3"/><rect x="96" y="118" width="28" height="18" rx="5" fill="#cc8400" stroke="#280a00" stroke-width="2"/></g><g transform="translate(30,34)"><rect x="112" y="158" width="22" height="60" rx="11" fill="#2d6b7a" stroke="#280a00" stroke-width="3"/><circle cx="123" cy="166" r="12" fill="none" stroke="#d63c3c" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="123" cy="166" r="4" fill="#d63c3c"/></g><g transform="translate(0,-34)"><rect x="68" y="30" width="84" height="70" rx="22" fill="#d9dde3" stroke="#280a00" stroke-width="3"/><rect x="88" y="50" width="54" height="24" rx="12" fill="#3f3851"/><circle cx="125" cy="62" r="6" fill="#f8b547"/><line x1="110" y1="30" x2="110" y2="14" stroke="#280a00" stroke-width="3"/><circle cx="110" cy="12" r="6" fill="#e27f6d" stroke="#280a00" stroke-width="3"/><circle cx="110" cy="96" r="12" fill="none" stroke="#d63c3c" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="110" cy="96" r="4" fill="#d63c3c"/></g><g transform="translate(46,0)"><rect x="128" y="104" width="20" height="58" rx="10" fill="#b9c2cc" stroke="#280a00" stroke-width="3"/><circle cx="138" cy="112" r="12" fill="none" stroke="#d63c3c" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="138" cy="112" r="4" fill="#d63c3c"/></g></g><g transform="translate(280,36)"><text x="196" y="34" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">cabeca</text><text x="110" y="186" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">tronco</text><text x="36" y="180" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">braco_tras</text><text x="184" y="180" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">braco_frente</text><text x="66" y="270" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">perna_tras</text><text x="154" y="270" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#3f3851">perna_frente</text></g></svg></div><figcaption>Robô original da trilha: seis partes. O ponto vermelho é o pivô; o círculo tracejado mostra a área que precisa de sobreposição.</figcaption></figure>
+  <table>
+    <tr><th>Regra</th><th>Por quê</th></tr>
+    <tr><td>No mínimo seis partes: cabeça, tronco, dois braços, duas pernas.</td><td>É o mínimo para andar, pular e atacar na V2.</td></tr>
+    <tr><td>Pontas arredondadas que passam do pivô (sobreposição).</td><td>Quando o braço gira, não abre buraco entre ele e o ombro.</td></tr>
+    <tr><td>Pivô na junta: ombro, quadril, pescoço.</td><td>A parte gira de onde gira um corpo de verdade.</td></tr>
+    <tr><td>Partes de trás um tom mais escuras.</td><td>Separa os membros de trás dos da frente sem precisar de contorno extra.</td></tr>
+    <tr><td>Cada parte numa camada, com nome.</td><td>Na exportação cada camada vira um arquivo.</td></tr>
+  </table>
+  <div class="caixa dica"><span class="tag">Marque o pivô</span>Crie uma camada <code>pivos</code> com um círculo pequeno em cada junta. Ela não é exportada, mas vai dizer a você (e ao Godot, na V2) onde fica cada eixo.</div>
+</section>
+
+<section class="sala" id="sala7">
+  <div class="sala-cab"><span class="sala-num">SALA 07</span><h2>Redesenho guiado: um objeto do castelo</h2></div>
+  <p class="objetivo">Objetivo: treinar o método redesenhando um objeto do castelo e começar a arte do seu jogo — Atividade V1.1.</p>
+  <p>Escolha um dos três objetos do <a href="kit_estudo_V1.zip">kit de estudo</a>. O objetivo não é copiar pixel por pixel, e sim traduzir: as mesmas partes e cores, construídas com formas.</p>
+  <div class="caixa atencao"><span class="tag">O castelo é o norte, não o molde</span>O redesenho é só exercício: nada do castelo entra no seu jogo. Toda a arte do seu jogo — herói, inimigos, chefão, itens e cenário — é desenhada por você a partir do seu GDD. O castelo é a régua de escala e o exemplo do que cada peça precisa ter.</div>
+  <div class="passo">
+    <div class="passo-tit"><span class="moeda">6</span>Formas (30 min)</div>
+    <ol>
+      <li>Prancheta de 128 × 128 (baú, caixa) ou 256 × 256 (porta). Coloque a referência numa camada travada, com 30% de opacidade.</li>
+      <li>Decomponha: tampa, corpo, aros, fecho (ou batente, folha, maçaneta). Só retângulos, elipses e cantos dinâmicos.</li>
+      <li>Una o contorno externo com o Construtor de formas.</li>
+    </ol>
+  </div>
+  <div class="passo">
+    <div class="passo-tit"><span class="moeda">7</span>Cor e acabamento (40 min)</div>
+    <ol>
+      <li>Pinte só com as amostras globais do castelo: base primeiro.</li>
+      <li>Acrescente formas de sombra e de luz chapadas, com luz vindo de cima.</li>
+      <li>Contorno de 8 px em <code>contorno_1</code> no contorno externo.</li>
+      <li>Reduza o zoom até o objeto ficar do tamanho do jogo (25%). Ainda se entende o que é?</li>
+    </ol>
+    <div class="porque"><b>Por quê:</b> o mesmo método — formas, cor base, sombra, luz, contorno — vale para o seu herói nesta semana.</div>
+  </div>
+  <div class="passo">
+    <div class="passo-tit"><span class="moeda">8</span>Comece o seu jogo (50 min)</div>
+    <ol>
+      <li>Abra o seu GDD da C1 na tabela “No castelo → No seu jogo”: quem é o herói, o inimigo comum, o inimigo de longe e o chefão do <b>seu</b> mundo?</li>
+      <li>Crie o grupo de amostras globais do seu jogo: três tons por material e uma cor de contorno.</li>
+      <li>Numa prancheta de 1024 × 256, rascunhe em preto, só com formas, a silhueta dos quatro personagens lado a lado. Anote a forma dominante de cada um (Sala 05).</li>
+    </ol>
+    <div class="porque"><b>Por quê:</b> você sai do sábado com o seu jogo já começado e chega ao EAD sabendo o que desenhar. O redesenho ensinou o método; daqui em diante, o desenho é seu.</div>
+  </div>
+  <div class="caixa checkpoint"><span class="tag">Checkpoint do instrutor</span>Chame o instrutor antes de colorir: ele confere a decomposição e a espessura do contorno.</div>
+</section>
+
+<section class="sala" id="sala8">
+  <div class="sala-cab"><span class="sala-num">SALA 08</span><h2>Exportar para a engine</h2></div>
+  <p class="objetivo">Objetivo: gerar os arquivos com os nomes e o formato que o Godot e a trilha esperam.</p>
+  <ol>
+    <li>Agrupe cada peça (<kbd>Ctrl</kbd>+<kbd>G</kbd>) e abra <b>Janela → Exportar ativos</b>.</li>
+    <li>Arraste cada grupo para o painel e dê o nome no padrão da trilha.</li>
+    <li>Em <b>Configurações de exportação</b>, deixe <b>PNG, escala 1x</b> (o documento já está em 4×) e acrescente <b>SVG</b>.</li>
+    <li>Clique em <b>Exportar</b> e escolha a pasta <code>arte/</code> do seu projeto.</li>
+  </ol>
+  <table>
+    <tr><th>Padrão de nome</th><th>Exemplos</th></tr>
+    <tr><td><code>tipo_nome_parte.png</code><br>minúsculas, sem acento, sem espaço</td><td><code>objeto_bau_fechado.png</code> · <code>heroi_robo_cabeca.png</code> · <code>heroi_robo_braco_frente.png</code> · <code>cenario_plataforma_meio.png</code></td></tr>
+  </table>
+  <div class="caixa atencao"><span class="tag">Guarde o .ai</span>O arquivo <code>.ai</code> com camadas e amostras globais é o arquivo-mestre. Os PNG são “impressões” dele: se algo mudar, você muda o .ai e exporta de novo.</div>
+  <div class="caixa checkpoint"><span class="tag">Fim da aula 1 · Atividade V1.1</span>
+    <ul class="lista-check">
+      <li>O objeto redesenhado em <code>.ai</code>, com camadas nomeadas.</li>
+      <li>PNG e SVG exportados pelo painel Exportar ativos.</li>
+      <li>Uma imagem lado a lado: referência em pixel e o seu vetor.</li>
+      <li>As amostras do seu jogo e a prancheta com as silhuetas do seu elenco (PNG).</li>
+    </ul>
+    Não terminou no sábado? Conclua no início do EAD. Durante a semana você estuda a fundamentação e desenha a arte do <b>seu</b> jogo no <a href="https://rclepf.github.io/GameDev2D-V1-02/">Site 2 · Estudo da semana</a>.
+  </div>
+</section>
+
+<section class="sala" id="sala9">
+  <div class="sala-cab"><span class="sala-num">SALA 09</span><h2>Onde estamos na trilha</h2></div>
+  <div class="mapa">
+    <div class="porta feita"><img src="img/porta.png" alt=""><b>C1</b>GDD ✓</div>
+    <div class="porta aqui"><img src="img/porta.png" alt=""><b>V1</b>Vetor ◂ você</div>
+    <div class="porta futura"><img src="img/porta.png" alt=""><b>V2</b>Rigging</div>
+    <div class="porta futura"><img src="img/porta.png" alt=""><b>V3</b>Fase</div>
+    <div class="porta futura"><img src="img/porta.png" alt=""><b>C2</b>Engine</div>
+    <div class="porta futura"><img src="img/porta.png" alt=""><b>C3</b>Mecânicas</div>
+    <div class="porta futura"><img src="img/porta.png" alt=""><b>C4</b>Áudio</div>
+    <div class="porta futura"><img src="img/porta.png" alt=""><b>C5</b>Publicação</div>
+  </div>
+  <p>As partes do herói que você desenha nesta semana ganham ossos na V2. Os elementos de cenário viram camadas da fase na V3.</p>
+  <nav class="vizinhos">
+    <a href="#sala1"><small>Voltar ao início</small>Sala 01 · Vetor em jogos</a>
+    <a class="prox" href="https://rclepf.github.io/GameDev2D-V1-02/"><small>Próximo · EAD da semana</small>Site 2 · Estudo da semana</a>
+  </nav>
+</section>
+</main>
+
+<footer><b>Trilha GameDev 2D</b> · V1 Arte Vetorial para Jogos · Site 1 de 3 (Aula inicial) — O castelo em formas<br>SENAI CTTI · Assets: série “Criando um jogo DO ZERO com Construct 3” (Gamecraft)</footer>
+<script src="trilha.js"></script>
+</body>
+</html>

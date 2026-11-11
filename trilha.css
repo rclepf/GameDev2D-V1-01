@@ -1,0 +1,164 @@
+/* Trilha GameDev 2D — identidade visual "castelo em pixel art" (SENAI CTTI) */
+:root {
+  --noite: #1b1724;
+  --pedra: #262033;
+  --pedra-2: #312a40;
+  --borda: #4a4060;
+  --texto: #ece6f5;
+  --texto-2: #b9afcc;
+  --ouro: #f5c04a;
+  --ouro-esc: #b98a1e;
+  --tijolo: #d98e7b;
+  --porco: #45c3a6;
+  --perigo: #ff7a7a;
+  --pergaminho: #f3e4c4;
+  --tinta: #3b2a1d;
+  --codigo: #14111b;
+  --largura: 860px;
+  --pixel: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;  /* títulos: legível, com personalidade */
+  --rotulo: "JetBrains Mono", Consolas, monospace;              /* etiquetas pequenas */
+  --corpo: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --mono: "JetBrains Mono", Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0; background: var(--noite); color: var(--texto);
+  font: 17px/1.65 var(--corpo);
+  background-image: linear-gradient(rgba(27,23,36,.93), rgba(27,23,36,.97)), url(img/tijolo.png);
+  background-size: auto, 64px 64px; image-rendering: pixelated;
+}
+img { image-rendering: pixelated; max-width: 100%; }
+a { color: var(--ouro); }
+code { font: .9em var(--mono); background: var(--pedra-2); padding: .1em .35em; border-radius: 3px; color: #ffe3a3; }
+kbd { font: .85em var(--mono); background: var(--pedra-2); border: 1px solid var(--borda); border-bottom-width: 3px; border-radius: 4px; padding: 0 .4em; }
+
+/* barra superior estilo HUD */
+.hud {
+  position: sticky; top: 0; z-index: 10; background: rgba(20,17,27,.95);
+  border-bottom: 3px solid var(--borda); backdrop-filter: blur(4px);
+}
+.hud .dentro { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 14px; padding: 8px 16px; overflow-x: auto; }
+.hud .marca { font: 600 15px var(--pixel); color: var(--ouro); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+.hud .marca img { height: 22px; }
+.hud nav { display: flex; gap: 6px; }
+.hud nav a {
+  font: 14px var(--rotulo); color: var(--texto-2); text-decoration: none; white-space: nowrap;
+  padding: 3px 9px; border: 2px solid transparent; border-radius: 4px;
+}
+.hud nav a:hover { color: var(--texto); border-color: var(--borda); background: var(--pedra); }
+
+/* abertura */
+.abertura { max-width: var(--largura); margin: 0 auto; padding: 48px 16px 8px; }
+.selo { font: 15px var(--rotulo); color: var(--porco); letter-spacing: .04em; }
+h1 { font: 800 clamp(34px, 6vw, 54px)/1.08 var(--pixel); letter-spacing: -0.01em; margin: 10px 0 14px; color: var(--texto); }
+h1 em { font-style: normal; color: var(--ouro); }
+.lead { font-size: 19px; color: var(--texto-2); max-width: 680px; }
+.palco {
+  margin: 26px 0 8px; height: 150px; position: relative; overflow: hidden;
+  border: 3px solid var(--borda); border-radius: 6px; background: var(--pedra) url(img/tijolo.png) 0 0 / 64px 64px;
+}
+.palco::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 22px; background: #8d4f43; border-top: 4px solid var(--ouro); }
+.sprite { position: absolute; bottom: 22px; background-repeat: no-repeat; }
+.rei { width: 219px; height: 180px; background-image: url(img/rei_run.png); animation: quadros 0.8s steps(8) infinite, atravessa 9s linear infinite; bottom: -14px; }
+.porco { width: 84px; height: 84px; background-image: url(img/porco_run.png); animation: quadros6 0.6s steps(6) infinite, foge 9s linear infinite; bottom: 18px; }
+@keyframes quadros { to { background-position: -1752px 0; } }
+@keyframes quadros6 { to { background-position: -504px 0; } }
+@keyframes atravessa { from { left: -220px; } to { left: 100%; } }
+@keyframes foge { from { left: -40px; transform: scaleX(-1); } to { left: calc(100% + 200px); transform: scaleX(-1); } }
+@media (prefers-reduced-motion: reduce) { .rei, .porco { animation: none; left: 30%; } .porco { left: 60%; } }
+
+/* inventário (ficha da etapa) */
+.inventario { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin: 22px 0 6px; }
+.slot { background: var(--pedra); border: 3px solid var(--borda); border-radius: 6px; padding: 12px 46px 12px 14px; position: relative; }
+.slot .rot { font: 13px var(--rotulo); color: var(--texto-2); text-transform: uppercase; letter-spacing: .05em; }
+.slot .val { font-weight: 700; margin-top: 2px; }
+.slot .val a { color: var(--texto); }
+.slot img { position: absolute; right: 10px; top: 10px; height: 26px; opacity: .9; }
+.slot.entrega { border-color: var(--ouro-esc); }
+
+/* salas (seções) */
+main { max-width: var(--largura); margin: 0 auto; padding: 0 16px 60px; }
+.sala { margin-top: 56px; }
+.sala-cab { display: flex; align-items: baseline; gap: 14px; border-bottom: 3px solid var(--borda); padding-bottom: 8px; margin-bottom: 14px; }
+.sala-num { font: 700 15px var(--rotulo); color: var(--noite); background: var(--ouro); padding: 2px 10px; border-radius: 3px; white-space: nowrap; }
+h2 { font: 700 28px/1.2 var(--pixel); margin: 0; }
+.objetivo { color: var(--porco); font-weight: 700; margin: 0 0 12px; }
+h3 { font: 700 21px var(--pixel); color: var(--ouro); margin: 30px 0 8px; }
+
+/* passos */
+.passo { background: var(--pedra); border: 3px solid var(--borda); border-radius: 8px; padding: 16px 18px 6px; margin: 18px 0; }
+.passo-tit { display: flex; align-items: center; gap: 12px; font: 700 19px var(--pixel); margin-bottom: 6px; }
+.moeda {
+  width: 34px; height: 34px; flex: none; border-radius: 50%; display: grid; place-items: center;
+  background: var(--ouro); color: var(--noite); font: 700 16px var(--rotulo); box-shadow: inset -3px -3px 0 var(--ouro-esc);
+}
+.porque { background: var(--pergaminho); color: var(--tinta); border-radius: 4px; padding: 10px 14px; margin: 10px 0 12px; font-size: 16px; border-left: 6px solid var(--ouro-esc); }
+.porque b:first-child { font-family: var(--pixel); }
+
+/* caixas de destaque */
+.caixa { border-radius: 6px; padding: 12px 16px; margin: 18px 0; border: 3px solid; background: var(--pedra); }
+.caixa .tag { font: 700 14px var(--rotulo); text-transform: uppercase; letter-spacing: .05em; display: block; margin-bottom: 2px; }
+.caixa.checkpoint { border-color: var(--porco); } .caixa.checkpoint .tag { color: var(--porco); }
+.caixa.atencao { border-color: var(--perigo); } .caixa.atencao .tag { color: var(--perigo); }
+.caixa.dica { border-color: var(--ouro-esc); } .caixa.dica .tag { color: var(--ouro); }
+.caixa.video { border-color: var(--tijolo); } .caixa.video .tag { color: var(--tijolo); }
+
+/* código */
+pre { tab-size: 4; -moz-tab-size: 4; position: relative; background: var(--codigo); border: 2px solid var(--borda); border-radius: 6px; padding: 14px 16px; overflow-x: auto; margin: 12px 0; }
+pre code { background: none; padding: 0; color: #e8e2f2; font-size: 14.5px; line-height: 1.55; }
+pre .copiar {
+  position: absolute; top: 6px; right: 6px; font: 12px var(--rotulo); background: var(--pedra-2); color: var(--texto-2);
+  border: 2px solid var(--borda); border-radius: 4px; padding: 2px 8px; cursor: pointer;
+}
+pre .copiar:hover { color: var(--ouro); }
+pre .arquivo { display: block; font: 12px var(--rotulo); color: var(--texto-2); margin: -4px 0 8px; }
+.hljs-keyword, .hljs-built_in { color: #ff9e7a; } .hljs-string { color: #b5e48c; } .hljs-number, .hljs-literal { color: #f5c04a; }
+.hljs-comment { color: #8a7fa3; font-style: italic; } .hljs-title, .hljs-title.function_ { color: #7cd6ff; } .hljs-meta { color: #45c3a6; }
+
+/* tabelas e figuras */
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 16px; }
+th { font: 700 14px var(--rotulo); text-align: left; color: var(--ouro); background: var(--pedra-2); }
+th, td { border: 2px solid var(--borda); padding: 8px 10px; vertical-align: top; }
+td { background: var(--pedra); }
+figure { margin: 18px 0; }
+figure img { width: 100%; border: 3px solid var(--borda); border-radius: 6px; }
+figcaption { font-size: 14px; color: var(--texto-2); margin-top: 4px; }
+.lista-check { list-style: none; padding: 0; }
+.lista-check li { padding-left: 30px; position: relative; margin: 6px 0; }
+.lista-check li::before { content: ""; position: absolute; left: 0; top: 4px; width: 16px; height: 16px; border: 3px solid var(--porco); border-radius: 3px; }
+
+/* mapa da trilha */
+.mapa { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin: 16px 0; }
+.porta { text-align: center; font-size: 13px; color: var(--texto-2); }
+.porta img { height: 70px; display: block; margin: 0 auto 4px; }
+.porta.feita img { filter: saturate(.6) brightness(.85); }
+.porta.futura img { filter: grayscale(1) brightness(.5); }
+.porta.aqui { color: var(--ouro); font-weight: 700; }
+.porta.aqui img { filter: drop-shadow(0 0 10px var(--ouro)); }
+.porta b { display: block; font: 13px var(--rotulo); }
+@media (max-width: 640px) { .mapa { grid-template-columns: repeat(4, 1fr); } }
+
+/* navegação de rodapé */
+.vizinhos { display: flex; justify-content: space-between; gap: 12px; margin-top: 50px; }
+.vizinhos a { flex: 1; text-decoration: none; background: var(--pedra); border: 3px solid var(--borda); border-radius: 6px; padding: 12px 16px; color: var(--texto); }
+.vizinhos a:hover { border-color: var(--ouro-esc); }
+.vizinhos small { display: block; font: 13px var(--rotulo); color: var(--texto-2); }
+.vizinhos .prox { text-align: right; }
+footer { border-top: 3px solid var(--borda); padding: 18px 16px 40px; text-align: center; color: var(--texto-2); font-size: 14px; }
+footer b { font-family: var(--pixel); color: var(--texto); }
+
+/* ---- P1/V1: comparações lado a lado, rampas de cor, desenhos SVG ---- */
+.par { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+.par figure { margin: 0; }
+@media (max-width: 640px) { .par { grid-template-columns: 1fr; } }
+figure.bom figcaption::before { content: "✓ "; color: var(--porco); font-weight: 700; }
+figure.ruim figcaption::before { content: "✗ "; color: var(--perigo); font-weight: 700; }
+.rampas { display: grid; gap: 8px; margin: 18px 0; }
+.rampa { display: grid; grid-template-columns: 110px repeat(5, 1fr); gap: 4px; align-items: stretch; }
+.rampa b { font: 13px var(--rotulo); color: var(--texto-2); align-self: center; }
+.rampa span { height: 46px; border-radius: 4px; border: 2px solid var(--borda); font: 11px var(--rotulo); display: flex; align-items: flex-end; padding: 3px 5px; color: rgba(0,0,0,.7); }
+.rampa span.esc { color: rgba(255,255,255,.85); }
+.desenho { background: #f6edda; border: 3px solid var(--borda); border-radius: 6px; padding: 10px; }
+.desenho svg { display: block; width: 100%; height: auto; }
+.baixar { display: inline-block; font: 700 15px var(--rotulo); background: var(--ouro); color: var(--noite); padding: 8px 14px; border-radius: 4px; text-decoration: none; margin: 6px 0; }
